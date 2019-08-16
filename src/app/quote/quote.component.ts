@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import{ Quotes} from '../qotes';
+import{ Quote} from '../quote';
 
 @Component({
   selector: 'app-quote',
@@ -8,6 +8,10 @@ import{ Quotes} from '../qotes';
 })
 export class QuoteComponent implements OnInit {
   title="quotes";
+
+  quote: Quote[] = [
+    new Quote('the world is a cycle', 'what goes around comes around', 'emmanuel', 2, 5),
+  ]
 
   constructor() { }
 
