@@ -10,8 +10,19 @@ export class QuoteComponent implements OnInit {
   title="quotes";
 
   quote: Quote[] = [
-    new Quote('the world is a cycle', 'what goes around comes around', 'emmanuel', 2, 5),
+    new Quote('the world is a cycle', 'emmanuel', 'what goes around comes around', 2, 5),
   ]
+
+  toggleDetails(index){
+    this.quote[index].showDescription = !this.quote[index].showDescription;
+  }
+
+  completeGoal(isComplete, index){
+    if (isComplete) {
+      this.quote.splice(index,1);
+    }
+  }
+
 
   constructor() { }
 
