@@ -6,7 +6,7 @@
   <hr>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-6">
         <h2 style="text-align:center">Quotes</h2>
         <hr>
         <ul *ngFor='let quotes of quote;let i = index' class="quote-list">
@@ -16,14 +16,15 @@
                 <strong>{{quotes.quotes}}</strong>
                 <br>
                 Author: <em>{{quotes.author}}</em><br><br>
-                <app-details *ngIf='quotes.showDescription' [myQuote]='quotes' (isComplete) = 'completeGoal($event,i)'></app-details>
-                <button (click)='toggleDetails(i)'>DITAILS</button>
+                <app-details *ngIf='quotes.showDescription' [myQuote]='quotes' (isComplete) = 'deleteQuote($event,i)'></app-details>
+                <button (click)='toggleDetails(i)'>Details</button>
               </div>
             </div>
           <li>
-
         </ul>
-
+      </div>
+      <div class="col-md-6">
+        <app-quote-form></app-quote-form>
       </div>
     </div>
   </div>

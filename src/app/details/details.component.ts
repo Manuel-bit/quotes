@@ -11,7 +11,7 @@ export class DetailsComponent implements OnInit {
   @Input() myQuote: Quote;
   @Output() isComplete = new EventEmitter<boolean>();
 
-  goalComplete(complete:boolean){
+  quoteDelete(complete:boolean){
     this.isComplete.emit(complete);
   }
 
