@@ -1,7 +1,10 @@
 h1{
   text-align: center;
   color: yellow;
+  font-family: 'Permanent Marker', cursive;
 }
 header{
   background-color: black;
+  height: 10vh;
+  text-align: center;
 }

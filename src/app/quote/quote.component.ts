@@ -11,6 +11,9 @@ export class QuoteComponent implements OnInit {
 
   quote: Quote[] = [
     new Quote('the world is a cycle', 'emmanuel', 'what goes around comes around', 0, 0),
+    new Quote('You know you’re in love when you can’t fall asleep because reality is finally better than your dreams', 'Dr. Suess', 'nothing is better than the feeling of loving or being loved', 0, 0),
+    new Quote('For evry dark night there is a brighter day', '2 Pack shakur','allways have hope for better things in future', 0, 0),
+    
   ]
 
   toggleDetails(index){

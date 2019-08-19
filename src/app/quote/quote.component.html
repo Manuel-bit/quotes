@@ -1,29 +1,9 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <div class="container-fluid">
+    <br>
     <div class="row">
       <div class="col-md-6">
+        <div class="card bg-transparent">
         <h2 style="text-align:center">Quotes</h2>
         <hr>
         <ul *ngFor='let quotes of sortQuotes ;let i = index' class="quote-list">
@@ -43,9 +23,12 @@
             </div>
           <li>
         </ul>
+        </div>
       </div>
       <div class="col-md-6">
+        <div class="card bg-transparent">
         <app-quote-form (addQuote)="addNewquote($event)"></app-quote-form>
+        </div>
       </div>
     </div>
   </div>
