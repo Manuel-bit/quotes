@@ -15,7 +15,7 @@
                 Author: <em>{{quotes.author}}</em><br><br>
                 <i class="fa fa-thumbs-up" id = "upvote"  (click)="upVote(i)">:   {{quotes.likes}}</i>
                 <i class="fa fa-thumbs-down" id = "downvote"  (click)="downVote(i)">:   {{quotes.dislikes}}</i>
-                <button (click)='toggleDetails(i)'>Details</button>
+                <button (click)='toggleDetails(i)' class="btn btn-success">Details</button>
                 </div>
                 <div class="card-body">
                 <app-details *ngIf='quotes.showDescription' [myQuote]='quotes' (isComplete) = 'deleteQuote($event,i)'></app-details>
