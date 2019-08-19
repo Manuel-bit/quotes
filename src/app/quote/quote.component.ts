@@ -22,6 +22,7 @@ export class QuoteComponent implements OnInit {
       this.quote.splice(index,1);
     }
   }
+
   deleteQuote(isComplete, index){
     if (isComplete) {
       let toDelete = confirm(`Are you sure you want to delete ${this.quote[index].quotes}?`)
@@ -31,6 +32,13 @@ export class QuoteComponent implements OnInit {
       }
     }
   }
+
+  addNewquote(quotes){
+   let quoteLength = this.quote.length;
+   quotes.id = quoteLength+1;
+   this.quote.push(quotes)
+ }
+
 
 
   constructor() { }

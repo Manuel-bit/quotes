@@ -1,18 +1,28 @@
 <div id="form">
   <h2 class="text-center">Create a new quote</h2>
   <hr>
-  <form>
+  <form #quoteForm='ngForm' (ngSubmit)='submitQuote()'>
       <div class="form-group">
           <label for="quoteName">Enter your quote</label>
-          <input type="text" required class="form-control" id="quoteName">
+          <input type="text" class="form-control" id="quoteName" [(ngModel)]="newQuote.quotes" name="quote" #quote='ngModel' required>
+          <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
+            <p>Name is required</p>
+          </div>
       </div>
       <div class="form-group">
           <label for="author">Authors Name</label>
-          <input type='text' id="author" class="form-control" required>
+          <input type='text' id="author" class="form-control" required [(ngModel)]="newQuote.author" name="author" #author='ngModel'>
+          <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+            <p>Author name is required</p>
+          </div>
       </div>
       <div class="form-group">
           <label for="description">Description</label>
-          <textarea class="form-control" id="description" rows="4" required></textarea>
+          <textarea class="form-control" id="description" rows="4" required [(ngModel)]="newQuote.description" name="description" #description="ngModel"></textarea>
+          <div [hidden]="description.valid || description.pristine" class="alert alert-danger">
+            <p>Description is required</p>
+          </div>
       </div>
+      <button type="submit" class="btn btn-success">Add Quote</button>
   </form>
-</div>
+  </div>
