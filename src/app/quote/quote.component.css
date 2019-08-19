@@ -1,7 +1,7 @@
 .quote-list{
   list-style-type: none;
 }
-.card-body button{
+.card-header button{
   float: right;
 
 }

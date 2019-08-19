@@ -10,7 +10,7 @@ export class QuoteComponent implements OnInit {
   title="quotes";
 
   quote: Quote[] = [
-    new Quote('the world is a cycle', 'emmanuel', 'what goes around comes around', 2, 5),
+    new Quote('the world is a cycle', 'emmanuel', 'what goes around comes around', 0, 0),
   ]
 
   toggleDetails(index){
@@ -38,6 +38,18 @@ export class QuoteComponent implements OnInit {
    quotes.id = quoteLength+1;
    this.quote.push(quotes)
  }
+ upVote(index){
+   this.quote[index].likes ++;
+ }
+ downVote(index){
+   this.quote[index].dislikes ++;
+ }
+
+ get sortQuotes() {
+ return this.quote.sort((a, b) => {
+   return <any>new Date(b.likes) - <any>new Date(a.likes);
+ });
+}
 
 
 

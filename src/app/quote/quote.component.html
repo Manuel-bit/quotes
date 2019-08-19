@@ -1,23 +1,44 @@
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
-  <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-6">
         <h2 style="text-align:center">Quotes</h2>
         <hr>
-        <ul *ngFor='let quotes of quote;let i = index' class="quote-list">
+        <ul *ngFor='let quotes of sortQuotes ;let i = index' class="quote-list">
           <li>
             <div class="card">
-              <div class="card-body">
+              <div class="card-header">
                 <strong>{{quotes.quotes}}</strong>
                 <br>
                 Author: <em>{{quotes.author}}</em><br><br>
-                <app-details *ngIf='quotes.showDescription' [myQuote]='quotes' (isComplete) = 'deleteQuote($event,i)'></app-details>
+                <i class="fa fa-thumbs-up" id = "upvote"  (click)="upVote(i)">:   {{quotes.likes}}</i>
+                <i class="fa fa-thumbs-down" id = "downvote"  (click)="downVote(i)">:   {{quotes.dislikes}}</i>
                 <button (click)='toggleDetails(i)'>Details</button>
+                </div>
+                <div class="card-body">
+                <app-details *ngIf='quotes.showDescription' [myQuote]='quotes' (isComplete) = 'deleteQuote($event,i)'></app-details>
               </div>
             </div>
           <li>
